@@ -18,8 +18,11 @@ client.connect(function(err) {
   const db = client.db(dbName);
   // console.log(db)
   // console.log(db.collection('users'))
-  db.collection('users').find().toArray(function(err, items) {
-     console.log(items)
+  const collection = db.collection('users')
+
+  collection.findOne({name: 'rose'}, function (err, item) {
+    assert.equal(null, err);
+    console.log(item)
   })
 
   client.close();
