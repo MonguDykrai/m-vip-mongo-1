@@ -24,12 +24,6 @@ client.connect(function (err) {
     assert.equal(null, err);
     console.log(doc)
 
-    setTimeout(function () {
-      collection.find().toArray(function (err, items) {
-        console.log(items)
-      })
-    }, 1000)
-
   })
 
   client.close();
