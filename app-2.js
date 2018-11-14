@@ -27,7 +27,11 @@ client.connect(function (err) {
 
   collection.findOne({ phone: 18521447412 }, function (err, item) {
     assert.equal(null, err);
-    console.log(item)
+    /**
+     * exsit: { _id: 5bebdf3bf69c1733e219f683, phone: 18521447412 }
+     * otherwise: null
+     */
+    console.log(item) // 
   })
 
   client.close();
