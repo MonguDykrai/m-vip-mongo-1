@@ -17,6 +17,7 @@ client.connect(function(err) {
 
   const db = client.db(dbName);
   console.log(db)
+  console.log(db.users)
 
   client.close();
 });
