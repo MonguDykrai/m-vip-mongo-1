@@ -11,7 +11,7 @@ const dbName = 'vip';
 const client = new MongoClient(url);
 
 // Use connect method to connect to the Server
-client.connect(function(err) {
+client.connect(function (err) {
   assert.equal(null, err);
   console.log("Connected successfully to server");
 
@@ -20,7 +20,12 @@ client.connect(function(err) {
   // console.log(db.collection('users'))
   const collection = db.collection('users')
 
-  collection.findOne({name: 'rose'}, function (err, item) {
+  // collection.findOne({name: 'rose'}, function (err, item) {
+  //   assert.equal(null, err);
+  //   console.log(item)
+  // })
+
+  collection.findOne({ phone: 18521447412 }, function (err, item) {
     assert.equal(null, err);
     console.log(item)
   })
